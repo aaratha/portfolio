@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Videos</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div id="videos">
+        <div id="gallery">
+          {{range .Websites}}
+          <div>
+            <a href="{{.Link}}" target="_blank">
+            <img
+              src="{{.ImagePath}}"
+              class="video"
+            ></img>
+            </a>
+          </div>
+          {{end}}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

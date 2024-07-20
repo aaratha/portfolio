@@ -9,8 +9,18 @@
   <body>
     <div class="content">
       <div id="videos">
-        <div id="videos-gallery">
-          <h1>Videos</h1>
+        <div id="gallery">
+          {{range .Videos}}
+          <div>
+            <iframe
+              src="{{.}}"
+              class="video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          {{end}}
         </div>
       </div>
     </div>

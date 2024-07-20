@@ -32,7 +32,15 @@
               Videos
             </button>
             <button id="menu-button">Visuals</button>
-            <button id="menu-button">Websites</button>
+            <button
+              id="menu-button"
+              hx-trigget="click"
+              hx-get="/websites"
+              hx-target="#content"
+              hx-swap="outerHTML"
+            >
+              Websites
+            </button>
           </div>
           <button
             id="menu-button"

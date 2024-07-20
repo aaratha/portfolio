@@ -24,17 +24,22 @@
           <div id="projects-tray">
             <button
               id="menu-button"
-              hx-trigget="click"
               hx-get="/videos"
               hx-target="#content"
               hx-swap="outerHTML"
             >
               Videos
             </button>
-            <button id="menu-button">Visuals</button>
             <button
               id="menu-button"
-              hx-trigget="click"
+              hx-get="/visuals"
+              hx-target="#content"
+              hx-swap="outerHTML"
+            >
+              Visuals
+            </button>
+            <button
+              id="menu-button"
               hx-get="/websites"
               hx-target="#content"
               hx-swap="outerHTML"
@@ -44,7 +49,6 @@
           </div>
           <button
             id="menu-button"
-            hx-trigget="click"
             hx-get="/contact"
             hx-target="#content"
             hx-swap="outerHTML"

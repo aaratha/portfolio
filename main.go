@@ -48,6 +48,7 @@ func main() {
 	http.HandleFunc("/hello", helloHandler)
 	http.HandleFunc("/contact", contactHandler)
 	http.HandleFunc("/videos", videosHandler)
+	http.HandleFunc("/visuals", visualsHandler)
 	http.HandleFunc("/websites", websitesHandler)
 
 	// Start the server
@@ -77,6 +78,11 @@ func videosHandler(w http.ResponseWriter, r *http.Request) {
 		Videos: videos,
 	}
 	tmpl.Execute(w, data)
+}
+
+func visualsHandler(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("templates/visuals.html"))
+	tmpl.Execute(w, nil)
 }
 
 func websitesHandler(w http.ResponseWriter, r *http.Request) {

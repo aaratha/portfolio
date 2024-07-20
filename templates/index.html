@@ -1,0 +1,54 @@
+{{ block "index" . }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTMX with Go</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="main">
+    <div id="menu">
+      <h1 class="z-2">Aseem Ratha</h1>
+      <div id="menu-button-tray">
+        <a id="menu-button" class="z-2" href="/">Home</a>
+        <button id="menu-button" class="projects-button z-2">Projects</button>
+        <div id="sliding-part">
+          <div id="projects-tray">
+            <button
+              id="menu-button"
+              hx-trigget="click"
+              hx-get="/videos"
+              hx-target="#content"
+              hx-swap="outerHTML"
+            >
+              Videos
+            </button>
+            <button id="menu-button">Visuals</button>
+            <button id="menu-button">Websites</button>
+          </div>
+          <button
+            id="menu-button"
+            hx-trigget="click"
+            hx-get="/contact"
+            hx-target="#content"
+            hx-swap="outerHTML"
+          >
+            Contact
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <p>This is the content</p>
+    </div>
+  </body>
+</html>
+{{ end }}

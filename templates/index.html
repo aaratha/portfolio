@@ -19,7 +19,16 @@
       <h1 class="z-2">Aseem Ratha</h1>
       <div id="menu-button-tray">
         <a id="menu-button" class="z-2" href="/">Home</a>
-        <button id="menu-button" class="projects-button z-2">Projects</button>
+        <button
+          id="menu-button"
+          class="projects-button z-2"
+          id="menu-button"
+          hx-get="/videos"
+          hx-target="#content"
+          hx-swap="outerHTML"
+        >
+          Projects
+        </button>
         <div id="sliding-part">
           <div id="projects-tray">
             <button
@@ -43,6 +52,7 @@
               hx-get="/websites"
               hx-target="#content"
               hx-swap="outerHTML"
+              class="last-button"
             >
               Websites
             </button>
@@ -52,6 +62,7 @@
             hx-get="/contact"
             hx-target="#content"
             hx-swap="outerHTML"
+            class="last-button"
           >
             Contact
           </button>

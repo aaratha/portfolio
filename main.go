@@ -5,6 +5,8 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"io/ioutil"
+
 	"net/http"
 	"path/filepath"
 )
@@ -50,6 +52,7 @@ func main() {
 	http.HandleFunc("/videos", videosHandler)
 	http.HandleFunc("/visuals", visualsHandler)
 	http.HandleFunc("/websites", websitesHandler)
+	http.HandleFunc("/gallery-content", galleryContentHandler)
 
 	// Start the server
 	fmt.Println("Starting server on :8001")
@@ -83,6 +86,34 @@ func videosHandler(w http.ResponseWriter, r *http.Request) {
 func visualsHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/visuals.html"))
 	tmpl.Execute(w, nil)
+}
+
+func galleryContentHandler(w http.ResponseWriter, r *http.Request) {
+	directory := r.URL.Query().Get("dir")
+	if directory == "" {
+		directory = "static/visuals/art" // Default directory
+	}
+	files, err := ioutil.ReadDir(directory)
+	if err != nil {
+		http.Error(w, "Error reading directory", http.StatusInternalServerError)
+		return
+	}
+	var images []string
+	for _, file := range files {
+		if !file.IsDir() {
+			ext := filepath.Ext(file.Name())
+			if ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".gif" {
+				images = append(images, filepath.Join("/", directory, file.Name()))
+			}
+		}
+	}
+	tmpl := template.Must(template.ParseFiles("templates/gallery_content.html"))
+	data := struct {
+		Images []string
+	}{
+		Images: images,
+	}
+	tmpl.Execute(w, data)
 }
 
 func websitesHandler(w http.ResponseWriter, r *http.Request) {

@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"html/template"
 	"io/ioutil"
+	"sort"
 
 	"net/http"
 	"path/filepath"
@@ -47,7 +48,6 @@ func main() {
 
 	// Define handlers
 	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/hello", helloHandler)
 	http.HandleFunc("/contact", contactHandler)
 	http.HandleFunc("/videos", videosHandler)
 	http.HandleFunc("/visuals", visualsHandler)
@@ -94,6 +94,11 @@ func galleryContentHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Error reading directory", http.StatusInternalServerError)
 		return
 	}
+	// Sort the files based on file names
+	sort.Slice(files, func(i, j int) bool {
+		return files[i].Name() < files[j].Name()
+	})
+
 	var images []string
 	for _, file := range files {
 		if !file.IsDir() {

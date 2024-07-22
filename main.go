@@ -55,8 +55,8 @@ func main() {
 	http.HandleFunc("/gallery-content", galleryContentHandler)
 
 	// Start the server
-	fmt.Println("Starting server on :8001")
-	http.ListenAndServe(":8001", nil)
+	fmt.Println("Starting server on :8080")
+	http.ListenAndServe(":8080", nil)
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {

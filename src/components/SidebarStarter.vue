@@ -10,8 +10,10 @@ function selectContent(name: string) {
 
 <template>
   <div class="sidebar-start">
-    <button @click="selectContent('ContentA')">Show Content A</button>
-    <button @click="selectContent('ContentB')">Show Content B</button>
+    <div class="sidebar">
+      <button @click="selectContent('ContentA')">Show Content A</button>
+      <button @click="selectContent('ContentB')">Show Content B</button>
+    </div>
   </div>
 </template>
 

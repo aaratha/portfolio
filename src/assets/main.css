@@ -28,12 +28,17 @@ main {
 }
 
 .sidebar {
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   min-width: 250px;
   width: 250px;
   margin: 0;
-  border-right: 2px solid var(--color-border);
+  background: rgba(125, 125, 125, 0.3);
+  margin: 30px;
+  border: none;
+  border-radius: 14px;
+  padding: 10px;
 }
 
 .sub-sidebar {
@@ -42,8 +47,8 @@ main {
   min-width: 220px;
   width: 220px;
   margin: 0;
-  border-right: 2px solid var(--color-border);
-  margin-left: 30px;
+  border: none;
+  margin-left: 10px;
 }
 
 Transition {
@@ -65,15 +70,17 @@ Transition {
 .sidebar-button {
   text-align: left;
   font-family: serif;
-  font-size: 1.2em;
+  font-size: 1.4em;
   background: transparent;
   border: none;
+  color: var(--color-text);
 }
 
 .sub-sidebar-button {
   text-align: left !important;
   font-family: serif;
-  font-size: 1.1em;
-  border: none;
+  font-size: 1.2em;
+  border: none !important;
   background: transparent;
+  color: var(--color-text);
 }

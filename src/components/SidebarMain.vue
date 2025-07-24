@@ -28,14 +28,10 @@ function selectContent(name: string) {
     </div>
     <button class="sidebar-button" @click="selectContent('Climate')">Papers</button>
     <div class="sub-sidebar">
-      <button class="sub-sidebar-button" @click="selectContent('Climate')">
-        Anthropogenic Climate Change
-      </button>
-      <button class="sub-sidebar-button" @click="selectContent('Fractal')">
-        Fractal Viscous Fingering
-      </button>
+      <button class="sub-sidebar-button" @click="selectContent('Climate')">Climate Change</button>
+      <button class="sub-sidebar-button" @click="selectContent('Fractal')">Viscous Fractals</button>
       <button class="sub-sidebar-button" @click="selectContent('Superconductor')">
-        High Temp Superconductor
+        Superconductor
       </button>
     </div>
     <button class="sidebar-button" @click="selectContent('Photos')">Artworks</button>

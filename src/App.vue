@@ -3,7 +3,8 @@ import SidebarMain from '@/components/SidebarMain.vue'
 import SidebarStarter from '@/components/SidebarStarter.vue'
 import ContentA from '@/components/ContentA.vue'
 import ContentB from '@/components/ContentB.vue'
-import { ref } from 'vue'
+import Fluid from '@/components/Fluid.vue'
+import { ref, onMounted } from 'vue'
 
 // null means no content selected, sidebarStart visible
 const components = {
@@ -30,6 +31,7 @@ function onSidebarAfterLeave() {
 </script>
 
 <template>
+  <Fluid />
   <main>
     <!-- Sidebar transition -->
     <Transition

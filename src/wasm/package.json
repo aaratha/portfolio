@@ -1,0 +1,14 @@
+{
+  "name": "wasm-fluid",
+  "version": "0.1.0",
+  "files": [
+    "wasm_fluid_bg.wasm",
+    "wasm_fluid.js",
+    "wasm_fluid.d.ts"
+  ],
+  "module": "wasm_fluid.js",
+  "types": "wasm_fluid.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

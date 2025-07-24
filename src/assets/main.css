@@ -38,17 +38,15 @@ main {
   margin: 30px;
   border: none;
   border-radius: 14px;
-  padding: 10px;
+  backdrop-filter: blur(5px);
+  justify-content: center;
 }
 
 .sub-sidebar {
   display: flex;
   flex-direction: column;
-  min-width: 220px;
-  width: 220px;
   margin: 0;
   border: none;
-  margin-left: 10px;
 }
 
 Transition {
@@ -74,6 +72,14 @@ Transition {
   background: transparent;
   border: none;
   color: var(--color-text);
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sidebar-button:hover {
+  color: var(--color-text-light-1);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .sub-sidebar-button {
@@ -83,4 +89,12 @@ Transition {
   border: none !important;
   background: transparent;
   color: var(--color-text);
+  padding-left: 50px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.sub-sidebar-button:hover {
+  color: var(--color-text-light-1);
+  background: rgba(0, 0, 0, 0.4);
 }
